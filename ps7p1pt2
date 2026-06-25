@@ -1,0 +1,32 @@
+class Employee:
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.email = first + '.' + last + '@compay.com'
+        
+    def fullname(self):
+        return '{} {}'.format(self.first, self.last)
+    # Bonus calculation method 
+    def calculate_bonus(self, bonus_rate):
+        retrun self.pay * bonus_rate
+
+
+emp_1 = Employee('Corey', 'Schafer', 50000)
+emp_2 = Employee('Test', 'User', 60000)
+
+emp_1.fullname()
+emp_2.fullname()
+
+print(emp_1.fullname())
+print(emp_2.fullname())
+
+# Enter bonus rate
+rate = float(input("Enter bonus rate as a decimal (e.g., 0.10 for 10%): "))
+
+# Display bonuses
+print("\nEmployee Bonuses")
+print("----------------")
+print(emp_1.fullname(), "Bonus: $", format(emp_1.calculate_bonus(rate), ",.2f"))
+print(emp_2.fullname(), "Bonus: $", format(emp_2.calculate_bonus(rate), ",.2f"))
