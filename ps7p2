@@ -1,0 +1,41 @@
+class Student:
+
+    def __init__(self, first_name, district_code, credits):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.district_code = district_code.upper()
+        self.credits = credits
+
+
+    # Method to calculate tuition
+    def compute_tuition(self):
+        if self.district_code == "I":
+            tuition = self.credits * 250.00
+        else:
+            tuition = self.credits * 500.00
+
+        return tuition
+
+    # Method to return full name
+    def full_name(self):
+        return self.first_name + " " + self.last_name
+
+
+# Create student objects
+student1 = Student("John", "Smith", "I", 12)
+student2 = Student("Mary", "Jones", "O", 12)
+
+# Display student infomation and tuition
+print("Student Tuition Report")
+print("-" * 40)
+
+print("Name:", student1.fullname())
+print("District Code:", student1.district_code)
+print("Credits:", student1.credits)
+print("Tuition Owed: $", format(student1.compute_tuition(), ",.2f"))
+print()
+
+print("Name:", student2.full_name())
+print("District Code:", student2.district_code)
+print("Credits:", student2.credits)
+print("Tuition Owed: $", format(student2.compute_tuition(), ",.2f"))
